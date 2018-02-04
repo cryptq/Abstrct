@@ -1,1 +1,10 @@
-
+var sha256 = sha256;
+var _Immutable = Immutable,
+    Map = _Immutable.Map,
+    List = _Immutable.List;
+var React = React;
+var Redux = Redux;
+var ReactDOM = ReactDOM;
+var ReactRedux = ReactRedux;
+var client = new ClientJS();
+var fingerprint = client.getFingerprint();
