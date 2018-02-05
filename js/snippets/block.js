@@ -12,7 +12,7 @@ class Block
 
 	calculateHash()			             //Используем sha256 алгоритм для создания хэша на основе переданной строки
 	{
-  		return CryptoJS.SHA256(this.index + this.previousHash + this.timeStamp + JSON.stringify(this.data) + this.nonce).toString();
+  		return TryTry.SHA256(this.index + this.previousHash + this.timeStamp + JSON.stringify(this.data) + this.nonce).toString();
 	}
   
   mineBlock(difficulty)                         //Доказываем выполнение работы "Пруф оф ворк"
