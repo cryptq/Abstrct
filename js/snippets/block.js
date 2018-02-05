@@ -10,7 +10,7 @@ class Block
     		this.nonce = 0;                         //Случайное значение, используемое при расчете добычи
 	}
 
-	calculateHash()						                    //Используем sha256 алгоритм для создания хэша на основе переданной строки
+	calculateHash()			             //Используем sha256 алгоритм для создания хэша на основе переданной строки
 	{
   		return CryptoJS.SHA256(this.index + this.previousHash + this.timeStamp + JSON.stringify(this.data) + this.nonce).toString();
 	}
