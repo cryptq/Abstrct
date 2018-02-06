@@ -1,5 +1,6 @@
 {
     "require": {
-        "workerman/workerman": "^3.5"
+        "workerman/workerman": "^3.5",
+        "pleonasm/merkle-tree": "1.0.0"
     }
 }
