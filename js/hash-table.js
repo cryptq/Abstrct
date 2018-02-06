@@ -82,3 +82,58 @@
 
     return hashCode;
   };
+  //////////////////////////////////////////////////////////////////////////
+  
+  
+  /////////////////////////////////////////////////////////////////////////
+  
+  /**
+   * Puts data into the table based on hashed key value.
+   *
+   * @public
+   * @method
+   * @param {Number|String} key Key for data.
+   * @param {Number|String} data Data to be stored in table.
+   */
+  exports.Hashtable.prototype.put = function (key, data, hashCode) {
+    /*
+      Make collision testing easy with optional hashCode parameter.
+      That should not be used! Only by spec/tests.
+    */
+    if (hashCode === undefined) {
+      // Typical use
+      hashCode = this.hashCode(key);
+    } else if (hashCode.length > 0) {
+      // Testing/Spec - String hash passed, convert to int based hash.
+      hashCode = this.hashCode(hashCode);
+    }
+    // Adjust hash to fit within buckets.
+    hashCode = hashCode % this.maxBucketCount;
+
+    var newNode = new exports.Node(key, data);
+
+    // No element exists at hash/index for given key -> put in table.
+    if (this.buckets[hashCode] === undefined) {
+      this.buckets[hashCode] = newNode;
+      return;
+    }
+
+    // Element exists at hash/index for given key, but, same key -> overwrite.
+    if (this.buckets[hashCode].key === key) {
+      this.buckets[hashCode].data = data;
+      return;
+    }
+
+    /*
+      Item exists at hash/index for key, but different key.
+      Handle collision.
+    */
+    var first = this.buckets[hashCode];
+    while (first.next !== undefined) {
+      first = first.next;
+    }
+    first.next = newNode;
+    newNode.prev = first;
+  };
+  ////////////////////////////////////////////////////////
+  
