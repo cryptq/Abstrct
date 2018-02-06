@@ -28,9 +28,9 @@ function makeconnect()
         }
       }
 		};	
-function date_time() {                                        
-	Data_Now = new Date();
-	Year = Data_Now.getFullYear();
+function date_time() {                                       //кастомизируем переменную timestamp 
+	Data_Now = new Date();                               //на нестандартные значения
+	Year = Data_Now.getFullYear();                      
 	Month = Data_Now.getMonth();
 	Day = Data_Now.getDate();
 	Hour = Data_Now.getHours();
