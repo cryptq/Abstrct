@@ -1,6 +1,6 @@
-function makeconnect()
-    {
-       if ("WebSocket" in window) {
+function makeconnect()                         
+    {                                                        // устанавливаем websocket соединения
+       if ("WebSocket" in window) {                         // для мгновенной передачи данных
         console.log("- WebSocket Ready = " +'"'+"true"+'"');
        var ws = new WebSocket("wss://echo.websocket.org");     
           console.log('+ Сервер = '+ws.url);
