@@ -2,10 +2,10 @@
 class ipfs{
      public function put () {         
          if (isset($_POST['put_this'])) { $var = $_POST['put_this'];            
-             include ('_param.php');             // параметры    
+             include ('_param.php');                     // параметры    
              echo '<pre>';
              print ($var);       
-             include ('_headers.php');        // заголовки выполнения запроса
+             include ('_headers.php');                // заголовки выполнения запроса
                  if (curl_errno($ch)) {
               echo 'Error:' . curl_error($ch);
                  }             
