@@ -22,6 +22,6 @@ class Block
         this.nonce++;
         this.hash = this.calculateHash();
       }
-    console.log("блок успешно сгенерирован с хэшем : " + this.hash);
+    console.log("блок успешно сгенерирован : " + this.hash);
   }
 }
