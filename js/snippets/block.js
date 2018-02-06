@@ -15,7 +15,7 @@ class Block
   		return TryTry.SHA256(this.index + this.previousHash + this.timeStamp + JSON.stringify(this.data) + this.nonce).toString();
 	}
   
-  mineBlock(difficulty)                         //Доказываем выполнение работы "Пруф оф ворк"
+  mineBlock(difficulty)                         //Доказываем выполнение работы "Proof-of-work"
   {
     while(this.hash.substring(0,difficulty) !== Array(difficulty + 1).join("0"))
       {
