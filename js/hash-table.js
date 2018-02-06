@@ -137,3 +137,126 @@
   };
   ////////////////////////////////////////////////////////
   
+  
+  ////////////////////////////////////////////////////////
+  /**
+   * Get's data from the table based on key.
+   *
+   * @public
+   * @method
+   * @param {Number|String} key Key for data to be retrieved.
+   */
+  exports.Hashtable.prototype.get = function (key, hashCode) {
+    /*
+      Make collision testing easy with optional hashCode parameter.
+      That should not be used! Only by spec/tests.
+    */
+    if (hashCode === undefined) {
+      // Typical use
+      hashCode = this.hashCode(key);
+    } else if (hashCode.length > 0) {
+      // Testing/Spec - String hash passed, convert to int based hash.
+      hashCode = this.hashCode(hashCode);
+    }
+    hashCode = hashCode % this.maxBucketCount;
+
+    if (this.buckets[hashCode] === undefined) {
+      return undefined;
+    } else if (
+      this.buckets[hashCode].next === undefined &&
+      this.buckets[hashCode].key === key
+    ) {
+      return this.buckets[hashCode].data;
+    } else {
+      var first = this.buckets[hashCode];
+      while (
+        first !== undefined &&
+        first.next !== undefined &&
+        first.key !== key
+      ) {
+        first = first.next;
+      }
+
+      if (first.key === key) {
+        return first.data;
+      } else {
+        return undefined;
+      }
+    }
+  };
+
+  /**
+   * Removes data from the table based on key.
+   *
+   * @public
+   * @method
+   * @param {Number|String} key Key of the data to be removed.
+   */
+  exports.Hashtable.prototype.remove = function (key, hashCode) {
+    /*
+      Make collision testing easy with optional hashCode parameter.
+      That should not be used! Only by spec/tests.
+    */
+    if (hashCode === undefined) {
+      // Typical use
+      hashCode = this.hashCode(key);
+    } else if (hashCode.length > 0) {
+      // Testing/Spec - String hash passed, convert to int based hash.
+      hashCode = this.hashCode(hashCode);
+    }
+    hashCode = hashCode % this.maxBucketCount;
+
+    if (this.buckets[hashCode] === undefined) {
+      return undefined;
+    } else if (this.buckets[hashCode].next === undefined) {
+      this.buckets[hashCode] = undefined;
+    } else {
+      var first = this.buckets[hashCode];
+
+      while (
+        first !== undefined &&
+        first.next !== undefined &&
+        first.key !== key
+      ) {
+        first = first.next;
+      }
+
+      var removedValue = first.data;
+
+      // Removing (B)
+      // (B) : only item in bucket
+      if (first.prev === undefined && first.next === undefined) {
+        first = undefined;
+        return removedValue;
+      }
+
+      // (B) - A - C: start link in bucket
+      if (first.prev === undefined && first.next !== undefined) {
+        first.data = first.next.data;
+        first.key = first.next.key;
+        if (first.next.next !== undefined) {
+          first.next = first.next.next;
+        } else {
+          first.next = undefined;
+        }
+        return removedValue;
+      }
+
+      // A - (B) : end link in bucket
+      if (first.prev !== undefined && first.next === undefined) {
+        first.prev.next = undefined;
+        first = undefined;
+        return removedValue;
+      }
+
+      // A - (B) - C : middle link in bucket
+      if (first.prev !== undefined && first.next !== undefined) {
+        first.prev.next = first.next;
+        first.next.prev = first.prev;
+        first = undefined;
+        return removedValue;
+      }
+
+    }
+  };
+})(typeof window === 'undefined' ? module.exports : window);
