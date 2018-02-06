@@ -19,7 +19,7 @@ function makeconnect()
          console.log(kvl(), evt.data[key]);    
       }  
       }
-         function send(ws) {
+         function send(ws) {                                  //используем локальное хранилище
            for (var i = 0; i < localStorage.length; i++) {
             var key = localStorage.key(i);
             ws.send('{' + '"' + key + '"' + ':' + '"' + localStorage[key] + '"' + '}');
