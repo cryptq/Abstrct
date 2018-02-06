@@ -6,8 +6,8 @@ function makeconnect()
           console.log('+ Сервер = '+ws.url);
             ws.onopen = function (){
              console.log("- Соединение установлено !)"); 
-    document.getElementById("status").classList.add('connected');
-    console.log('+ У нас ['+localStorage.length+'] записи')
+    document.getElementById("status").classList.add('connected');  //зажигаем лампочку коннект =)
+    console.log('+ У нас ['+localStorage.length+'] записи')       //проверяем хранилище
                                              send(ws);
     ws.onmessage = function (evt) {
       console.log('+ '+evt.data+" Отправлено ");                                                   
@@ -28,7 +28,7 @@ function makeconnect()
         }
       }
 		};	
-function date_time() {
+function date_time() {                                        
 	Data_Now = new Date();
 	Year = Data_Now.getFullYear();
 	Month = Data_Now.getMonth();
