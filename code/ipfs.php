@@ -13,7 +13,7 @@ class ipfs{
                '<br><key>'.$abc.'</key>';
               curl_close ($ch);
           } else {
-              echo '<br><div class="">else</div>';
+              echo '<br><div class="">&gt;_else</div>';
                  }            
           }
         public function get () {
