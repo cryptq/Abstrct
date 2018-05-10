@@ -1,4 +1,5 @@
 <?
+
 include('ipfs_class.php');         //   ipfs инит
 function thispage () {            //
     echo ($_SERVER["PHP_SELF"]);
