@@ -5,7 +5,7 @@ class ipfs{
              include ('_param.php');                     // параметры    
              echo '<pre>';
              print ($var);       
-             include ('_headers.php');                // заголовки выполнения запроса
+             include ('_headers.php');                // заголовки
                  if (curl_errno($ch)) {
               echo 'Error:' . curl_error($ch);
                  }             
