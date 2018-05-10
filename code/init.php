@@ -1,5 +1,5 @@
 <?
-include('ipfs_class.php');         //   ipfs инитится инклудом
+include('ipfs_class.php');         //   ipfs инит
 function thispage () {            //
     echo ($_SERVER["PHP_SELF"]);
     }
@@ -17,4 +17,4 @@ $balance = new balance;
         echo 'func()';
     }
  }
-$func = new func;         // тест инита
+$func = new func;         // тест
