@@ -1,4 +1,9 @@
        <?php 
+
+/* 
+       parts
+*/
+
      function get_adr()
      {
 $url = 'url';
@@ -9,7 +14,7 @@ $version = 2; // API version
 $block_io = new BlockIo($key, $pin, $version);
 $newAddr = $block_io->get_new_address(array('label' => $labl));  
      return $newAddr->data->address;
- }  
+    }  
 
 
 
