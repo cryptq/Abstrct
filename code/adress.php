@@ -1,12 +1,11 @@
-       <?php  /*print_r($_SESSION['addr']);*/
+       <?php 
                 if(  !isset($_SESSION)){
-         //  print_r($_SESSION['namee']);
        }
        else
        {
            
-           $key = '4433-c7b3-bc11-da5b';
-$pin = "FXyT3RFoAvoGx7zd";
+$key = '0000-0000-0000-0000';
+$pin = "0000000000000000";
 $labl =  time();
 $version = 2; // API version
 echo '<pre>';
