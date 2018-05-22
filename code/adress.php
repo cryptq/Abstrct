@@ -85,12 +85,10 @@ if($remainingSeconds < 1){
                              ?>" target="blank"><?=$_SESSION['addrs'];?>
                              </a>  &lt;/address&gt; <span style="color:grey;">// адресс пополнения</span></p>
                                                           
-                             <p>&lt;balance&gt; <a href="<?='
-        https://block.io/api/v2/get_address_balance/?api_key='.$key.'&addresses='.$_SESSION['addrs'];
+                             <p>&lt;balance&gt; <a href="<?=$point.$key.'&addresses='.$_SESSION['addrs'];
                              ?>" target="blank"><?= $obj[data][balances][0][pending_received_balance]?></a> &lt;/balance&gt; <span style="color:grey;">// ждёт подтверждения</span></p>
                             
-<p>&lt;balance&gt; <a href="<?='
-        https://block.io/api/v2/get_address_balance/?api_key='.$key.'&addresses='.$_SESSION['addrs'];
+<p>&lt;balance&gt; <a href="<?=$point.$key.'&addresses='.$_SESSION['addrs'];
                              ?>" target="blank"><?= $obj[data][balances][0][available_balance]?></a> &lt;/balance&gt; <span style="color:grey;">// баланс</span></p>
                                                        
 <p>&lt;time&gt; <a href="<?=$_SERVER['SCRIPT_NAME']?>">другой адрес через <?=(int)$reslt?> мин.</a> &lt;/time&gt;</p>
