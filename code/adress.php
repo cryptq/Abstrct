@@ -1,7 +1,7 @@
        <?php 
      function get_adr()
      {
-$point = 'url';
+$url = 'url';
 $key = '0000-0000-0000-0000';
 $pin = "0000000000000000";
 $labl =  time();
@@ -53,7 +53,7 @@ if($remainingSeconds < 1){
     if(  !isset(  $_SESSION['count']  )  )  $_SESSION['count']  =  0;
     if(  !isset(  $_SESSION['addrs']  )  )  $_SESSION['addrs']  = get_adr();
     $_SESSION['count']++;
-    $point = 'https://block.io/api/v2/get_address_balance/?api_key=';
+    $url = 'url';
     $key = '0000-0000-0000-0000';
     $page = file_get_contents($point.$key.'&addresses='.$_SESSION['addrs']);
     $obj = json_decode($page,true);
