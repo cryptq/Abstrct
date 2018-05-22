@@ -75,7 +75,7 @@ if($remainingSeconds < 1){
     if(  !isset(  $_SESSION['addrs']  )  )  $_SESSION['addrs']  = get_adr();
     $_SESSION['count']++;
     $point = 'https://block.io/api/v2/get_address_balance/?api_key=';
-    $key = '4433-c7b3-bc11-da5b';
+    $key = '0000-0000-0000-0000';
     $page = file_get_contents($point.$key.'&addresses='.$_SESSION['addrs']);
     $obj = json_decode($page,true);
 ?>
