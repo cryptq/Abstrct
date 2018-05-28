@@ -5,5 +5,5 @@
       $json = @file_get_contents($link);
       $blocks = json_decode($json,true);
    echo '<p>'.date("Y/m/d").'</p><pre>';
-print_r ($blocks);                        ///
+print_r ($blocks);                   ///
 ?>
