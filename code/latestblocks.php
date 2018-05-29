@@ -115,26 +115,14 @@ print_r ($blocks);                ///
       $json = @file_get_contents($link);
       $blocks = json_decode($json,true);
       $a = count($blocks['data']);$b = 1;$count = $a-$b;
-
 /*
 
-
-
-
 *///print_r ($blocks['data']['0']);
-
 $timestamp = $blocks['data'][$count]['timestamp'];
-//echo $blocks['data'][$count]['timestamp'];
 $datetimeFormat = 'H:i:s';
-
 $date = new \DateTime();
-// If you must have use time zones
-// $date = new \DateTime('now', new \DateTimeZone('Europe/Helsinki'));
 $date->setTimestamp($timestamp);
-//echo $date->format($datetimeFormat);
-
-
-   print '<p>'.date("Y/m/d").'</p><p>'.$count.'</p>'
+print '<p>'.date("Y/m/d").'</p><p>'.$count.'</p>'
    .'<hash class="timestamp" >'.$date->format($datetimeFormat).'</hash>'."\n"
    .'<hash class="mrkl_root" >'.$blocks['data'][$count]['mrkl_root'].'</hash>'."\n"
    .'<hash class="hash" >'     .$blocks['data'][$count]['hash']     .'</hash>'."\n"
@@ -147,9 +135,7 @@ $date->setTimestamp($timestamp);
    .'<pool class="pool_name" >'."\n"
    .'<a href="'.$blocks['data'][$count]['extras']['pool_link'].'" target="blank">'."\n"
    .$blocks['data'][$count]['extras']['pool_name'].'</a>'."\n"
-   .'</pool>'."\n" //
-  // .'<pool class="pool_link" >'.$blocks['data'][$count]['extras']['pool_link'].'</pool>'."\n"
-  ;
+   .'</pool>'."\n"  ;
 
 
 echo '<pre class="pre">';
