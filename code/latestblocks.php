@@ -1,7 +1,7 @@
 <style>
        p{text-align: center;}
     pre.pre_pre {
-        opacity: 0.3;
+    opacity: 0.3;
     color: yellow;
     font-size: 2px;
     position: absolute;
@@ -14,7 +14,7 @@
 }
 hash, object{transition: all 1s;}
     hash.mrkl_root {
-        position: fixed;
+    position: fixed;
     top: 60px;
     text-align: center;
     left: 100px;
