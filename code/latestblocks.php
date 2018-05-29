@@ -1,15 +1,5 @@
 <style>
-    p{text-align: center;}
-        </style>
-<?php $link = "https://chain.api.btc.com/v3/block/date/".date("Ymd");
-      $json = @file_get_contents($link);
-      $blocks = json_decode($json,true);
-   echo '<p>'.date("Y/m/d").'</p><pre>';
-print_r ($blocks);                ///
-?>
-
-<style>
-    p{text-align: center;}
+       p{text-align: center;}
     pre.pre_pre {
         opacity: 0.3;
     color: yellow;
@@ -111,6 +101,15 @@ a {
     text-decoration: none;
 }
         </style>
+<?php $link = "https://chain.api.btc.com/v3/block/date/".date("Ymd");
+      $json = @file_get_contents($link);
+      $blocks = json_decode($json,true);
+   echo '<p>'.date("Y/m/d").'</p><pre>';
+print_r ($blocks);                ///
+?>
+
+/////////////////////////////////////////////?/
+
 <?php error_reporting(0);
       $link = "https://chain.api.btc.com/v3/block/date/".date("Ymd");
       $json = @file_get_contents($link);
