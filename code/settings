@@ -1,0 +1,7 @@
+{
+    "php.executablePath": "C:/xampp/php/php.exe",
+    "php.validate.executablePath": "C:/xampp/php/php.exe",
+    "phpserver.phpPath": "C:/xampp/php/php.exe",
+    "phpserver.browser": "",
+    "workbench.colorTheme": "Solarized Light"
+}
