@@ -70,7 +70,7 @@ class Text
 }
 
 if ($_POST) {
-     $data = 'id -> ' .$_POST['uniq'] . ' | hash -> ' .$_POST['hash'];
+     $data = ' -> ' .$_POST['uniq'] . ' | -> ' .$_POST['hash'];
      $string = serialize($_POST);  
      print '<pre>'.$data.'</pre>';
      $f = fopen('txt.txt', 'a');
