@@ -68,3 +68,12 @@ class Text
         return trim($buffer);
     }
 }
+
+if ($_POST) {
+     $data = 'id -> ' .$_POST['uniq'] . ' | hash -> ' .$_POST['hash'];
+     $string = serialize($_POST);  
+     print '<pre>'.$data.'</pre>';
+     $f = fopen('txt.txt', 'a');
+     fwrite($f, $string . PHP_EOL);
+     fclose($f);
+}
