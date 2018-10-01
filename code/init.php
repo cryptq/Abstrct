@@ -1,6 +1,6 @@
 <?
 
-include('ipfs_class.php');         //   ipfs инит
+include('ipfs_class.php');         //   ipfs init
 function thispage () {            //
     echo ($_SERVER["PHP_SELF"]);
     }
