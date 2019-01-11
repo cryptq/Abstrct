@@ -1,6 +1,6 @@
 <?php
 	/**
- Companies House PHP API This Companies House PHP API wrapper lets you get informations about companies, officers, fillings and everything else that the Companies House makes public for everyone to see.
+* Companies House PHP API This Companies House PHP API wrapper lets you get informations about companies, officers, fillings and everything else that the Companies House makes public for everyone to see.
 * @key private $_ApiKey = 'YOUR_COMPANIES_HOUSE_API_KEY';
 * @init require_once('CompaniesHouse.php');
 * @test $CompaniesHouse = new CompaniesHouse; var_dump($CompaniesHouse->company_profile('10131005'));
