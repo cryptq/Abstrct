@@ -2,9 +2,9 @@
 
 	/**
 	*
-        * @key private $_ApiKey = 'YOUR_COMPANIES_HOUSE_API_KEY';
-        * @init require_once('CompaniesHouse.php');
-        * @test $CompaniesHouse = new CompaniesHouse; var_dump($CompaniesHouse->company_profile('10131005'));
+        * @key         private $_ApiKey = 'YOUR_COMPANIES_HOUSE_API_KEY';
+        * @init        require_once('CompaniesHouse.php');
+        * @test        $CompaniesHouse = new CompaniesHouse; var_dump($CompaniesHouse->company_profile('10131005'));
 	*
 	*/
 
